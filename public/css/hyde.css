@@ -32,7 +32,7 @@
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Average Sans", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 48em) {
   html {
@@ -79,8 +79,8 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-size: 3.25rem;
+  font-family: "Lobster", Helvetica, Arial, sans-serif;
+  font-size: 3.5rem;
 }
 
 /* Sidebar nav */
@@ -128,6 +128,10 @@ html {
 
 .content a {
   color: #f74a52;
+}
+
+.content h1 {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 48em) {
