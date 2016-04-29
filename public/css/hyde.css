@@ -122,8 +122,7 @@ html {
  */
 
 .content {
-  padding-top:    4rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
 }
 
 .content a {
@@ -139,6 +138,7 @@ html {
     max-width: 38rem;
     margin-left: 20rem;
     margin-right: 2rem;
+    padding-top: 4rem;
   }
 }
 
