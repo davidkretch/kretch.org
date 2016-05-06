@@ -13,11 +13,12 @@ into your model.
 
 The way a multilevel model encodes structure is by taking the parameters that 
 you're estimating, and adding another model which 'explains' those parameters. 
-If you start with an ordinary linear model of income by ZIP code, you get 
-parameters for each ZIP code; in a multilevel model, there will be another model 
-on top of that says all these ZIP codes are in the same county and are the 
-product of the same underlying pattern. By encoding this structure into the 
-model, it allows the model to 'borrow' information when it is scarce.
+If you try to estimate average income per ZIP code, you need to estimate however
+many parameters there are ZIP codes; in a multilevel model, there will be 
+another model on top of that says these ZIP codes are in the same county and
+are the product of the same underlying pattern. By encoding this structure into
+the model, it allows the model to share information among related groups, and 
+groups that don't have much data can borrow strength from those that do.
 
 ## Forecasting elections
 
