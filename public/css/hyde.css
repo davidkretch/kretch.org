@@ -31,9 +31,6 @@
  * Update the foundational and global aspects of the page.
  */
 
-html {
-  font-family: "Source Sans Pro", sans-serif;
-}
 @media (min-width: 48em) {
   html {
     font-size: 16px;
@@ -41,7 +38,7 @@ html {
 }
 @media (min-width: 58em) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
