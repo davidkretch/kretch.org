@@ -14,7 +14,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Playfair Display";
+  font-family: "Playfair Display", "Times New Roman", Times, serif;;
   font-weight: 700;
 }
 
