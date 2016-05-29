@@ -1,0 +1,129 @@
+/*
+ * Globals
+ */
+
+body {
+  padding-top: 70px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #333;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Playfair Display";
+  font-weight: 700;
+}
+
+a {
+  color: #f74a52;
+}
+
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 700px) {
+  .container {
+    width: 700px;
+  }
+}
+
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: left;
+}
+.pager > li > a {
+  width: 140px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+
+/*
+ * Blog posts
+ */
+
+.blog-post {
+  margin-bottom: 60px;
+}
+.blog-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.blog-post-title a {
+  color: #000;
+}
+.blog-post-meta {
+  margin-bottom: 20px;
+  color: #999;
+}
+
+
+/*
+ * Footer
+ */
+
+.blog-footer {
+  padding: 40px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+
+/*
+ * Navbar
+ */
+.navbar-default {
+  background-color: #fff;
+}
+.navbar-default .navbar-brand {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+}
+.navbar-default .navbar-brand:focus, 
+.navbar-default .navbar-brand:hover {
+  color: #000;
+}
+.navbar-default .navbar-nav li {
+  font-family: "Roboto Condensed", "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.navbar-default .navbar-nav li a {
+  color: #000;
+  padding: 4px 6px;
+}
+.navbar-default .navbar-nav li a:hover {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  padding: 4px 6px;
+}

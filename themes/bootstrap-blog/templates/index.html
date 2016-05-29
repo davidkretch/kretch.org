@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for article in articles_page.object_list %}
+  
+    <div class="blog-post">
+      <h2 class="blog-post-title"><a href="{{ SITEURL }}/{{ article.url }}"> {{ article.title }} </a></h2>
+      <p class="blog-post-meta"><time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time></p>
+      <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
+    </div><!-- /.blog-post -->
+  
+  {% endfor %}
+  
+  {% if articles_page.has_other_pages() %}
+      {% include 'pagination.html' %}
+  {% endif %}
+  
+  </section><!-- /#content -->
+{% endblock content %}
