@@ -15,7 +15,7 @@ DEFAULT_LANG = 'en'
 DIRECT_TEMPLATES = ['index']
 
 # Navbar menu items
-MENUITEMS = (('Contact', 'mailto:david.kretch@gmail.com'),)
+MENUITEMS = (('Contact', 'mailto:david.kretch@gmail.com', 'envelope'),)
 
 DEFAULT_PAGINATION = False
 

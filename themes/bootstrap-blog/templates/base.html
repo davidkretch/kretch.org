@@ -16,6 +16,9 @@
     <!-- Pygments syntax highlighting -->
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css" rel="stylesheet">
     
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    
     <!-- Custom styles for this template -->
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" rel="stylesheet">
     
@@ -46,8 +49,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
+            {% for title, link, icon in MENUITEMS %}
+            <li>
+              <a href="{{ link }}">
+                <i class="fa fa-{{ icon }} fa-fw"></i>
+                {{ title }}
+              </a>
+            </li>
             {% endfor %}
           </ul>
         </div><!--/.nav-collapse -->
@@ -66,9 +74,9 @@
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- MathJax -->
-    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:700" rel="stylesheet" type="text/css">
   </body>
 </html>
