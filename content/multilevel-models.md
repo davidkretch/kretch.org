@@ -102,7 +102,7 @@ state-level means \\( \beta_{state} \\), and one model for
 $$
 \begin{align}
   y =& \ \beta_{state} x_{state} + \epsilon
-  \\\\
+  \\\\\\
   \beta_{state} =& \ \alpha + \eta
 \end{align}
 $$

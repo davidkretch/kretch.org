@@ -14,9 +14,6 @@ DEFAULT_LANG = 'en'
 
 DIRECT_TEMPLATES = ['index']
 
-# Navbar menu items
-MENUITEMS = (('Contact', 'mailto:david.kretch@gmail.com', 'envelope'),)
-
 DEFAULT_PAGINATION = False
 
 DEFAULT_DATE_FORMAT = '%d %B %Y'
@@ -38,5 +35,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Disable author and category pages
-AUTHOR_SAVE_AS = False
-CATEGORY_SAVE_AS = False
+AUTHOR_SAVE_AS = ''
+CATEGORY_SAVE_AS = ''
+
+# Navbar menu items
+MENUITEMS = (('About', '/about.html', 'star'), 
+             ('Contact', 'mailto:david.kretch@gmail.com', 'envelope'),)
