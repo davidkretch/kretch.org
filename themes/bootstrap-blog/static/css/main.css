@@ -8,6 +8,10 @@ body {
   color: #333;
 }
 
+p {
+  margin-bottom: 18px;
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
