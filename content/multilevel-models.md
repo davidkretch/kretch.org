@@ -1,5 +1,8 @@
 Title: Multilevel models
 Date: 2016-05-01
+Summary: A brief introduction to multilevel models, which help answer difficult 
+         questions about data by adding the structure of the data into models 
+         of the data.
 
 In this post, I want to give a brief introduction to multilevel models, which 
 help when you're trying to figure out questions like what the average income 
