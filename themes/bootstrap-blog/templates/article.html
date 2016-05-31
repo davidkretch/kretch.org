@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
 
-    <div class="blog-post">
-      <h2 class="blog-post-title"> {{ article.title }} </h2>
-      <p class="blog-post-meta"><time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time></p>
-      <div class="entry-content"> {{ article.content }} </div><!-- /.entry-content -->
-    </div><!-- /.blog-post -->
+  <div class="blog-post">
+    <h2 class="blog-post-title"> {{ article.title }} </h2>
+    <p class="blog-post-meta"><time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time></p>
+    <div class="entry-content"> {{ article.content }} </div><!-- /.entry-content -->
+  </div><!-- /.blog-post -->
 
 {% endblock content %}
