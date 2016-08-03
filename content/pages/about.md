@@ -1,4 +1,4 @@
-Title: About me
+Title: About
 save_as: about.html
 
-Hello friend. Stay a while and listen.
+I am a data scientist in Washington DC.

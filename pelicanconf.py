@@ -38,6 +38,9 @@ AUTHOR_FEED_RSS = None
 AUTHOR_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 
+# Content supporting files
+STATIC_PATHS = ['css', 'data', 'images', 'js']
+
 # Navbar menu items
 MENUITEMS = (('About', '/about.html', 'star'), 
              ('Contact', 'mailto:david.kretch@gmail.com', 'envelope'),)

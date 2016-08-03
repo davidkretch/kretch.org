@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
-    {% block head %}
-    
+      
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +13,10 @@
 
     <!-- Pygments syntax highlighting -->
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css" rel="stylesheet">
+
+    <!-- Template fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:700" rel="stylesheet" type="text/css">
     
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -28,9 +30,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    {% endblock head %}
-    
+        
   </head>
   
   <body>
@@ -64,8 +64,7 @@
     
     <div class="container blog-main">
     
-      {% block content %}
-      {% endblock %}
+      {% block content %}{% endblock %}
       
     </div><!-- /.container -->
     
@@ -76,7 +75,5 @@
     <!-- MathJax -->
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Asap:700" rel="stylesheet" type="text/css">
   </body>
 </html>

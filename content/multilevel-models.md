@@ -4,6 +4,10 @@ Summary: A brief introduction to multilevel models, which help answer difficult
          questions about data by adding the structure of the data into models 
          of the data.
 
+<link href="css/multilevel-models.css" rel="stylesheet">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="js/multilevel-models.js"></script>
+
 In this post, I want to give a brief introduction to multilevel models, which 
 help when you're trying to figure out questions like what the average income 
 in each ZIP code is; that is, very specific questions that might be difficult to 
@@ -57,7 +61,7 @@ values are, and we've collected some data, shown below. We have a lot of data
 from Maryland and Virginia but sadly only one data point from DC. Also shown are
 the 'true' means, which I know in this case because I generated the data.
 
-![Data and true means]({filename}/images/multilevel_models_1.svg)
+<p><div id="plot1"></div></p>
 
 Given only the data, we want to figure out the state-level means. To begin with,
 let's just directly calculate the sample means state-by-state, even though this 
@@ -83,7 +87,7 @@ We fit this model in R with `lm(y ~ state - 1, data = df)`[^1]:
       parameter estimates are for each state in themselves, and not compared to 
       some reference state. 
 
-![Sample mean results]({filename}/images/multilevel_models_2.svg)
+<p><div id="plot2"></div></p>
 
 Ok, so that worked for Maryland and Virginia -- their estimates are close to the
 true values. But it did not work so well for DC, unsurprisingly. With only one 
@@ -121,7 +125,7 @@ We fit this new model in R using `lmer(y ~ (1 | state), data = df)`[^2]:
       model formula element `(1 | state)` tells `lmer` to add a model for 
       state-level intercepts, which we're calling \\( \beta_{state} \\).
 
-![Multilevel model results]({filename}/images/multilevel_models_3.svg)
+<p><div id="plot3"></div></p>
 
 Much better. The multilevel model has pulled the DC estimate towards the 
 region-level mean, and it is now actually quite close to the true value. What's 

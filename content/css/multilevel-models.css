@@ -1,0 +1,51 @@
+svg {
+  background-color: #f9f9f9;
+}
+
+svg text {
+  color: #393939;
+  font-family: Trebuchet MS, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.graph .data circle {
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+  fill: #d3d3d3;
+}
+
+.graph .state0 .data-colored circle {
+  fill: #f8766d;
+}
+
+.graph .state1 .data-colored circle {
+  fill: #00ba38;
+}
+
+.graph .state2 .data-colored circle {
+  fill: #619cff;
+}
+
+.graph .rug {
+  stroke: #393939;
+  stroke-width: 0.5px;
+}
+
+.graph .mean {
+  fill: #393939;
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+.graph .est-mean {
+  fill: #ffd700;
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+.graph .overall-est-mean {
+  stroke: #f8766d;
+  stroke-width: 1.5;
+  stroke-dasharray: 2, 5;
+}
