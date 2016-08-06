@@ -43,8 +43,8 @@ function createPlot(selector, data) {
       .data(function(d) { return d.data; })
       .enter()
       .append("circle")
-      .attr("cx", function(d) { return x(d); })
-      .attr("cy", y(0.5))
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; })
       .attr("r", 5);
 
   // Rug
@@ -56,8 +56,8 @@ function createPlot(selector, data) {
       .enter()
       .append("line")
       .attr("class", "rug")
-      .attr("x1", function(d) { return x(d); })
-      .attr("x2", function(d) { return x(d); })
+      .attr("x1", function(d) { return d.x; })
+      .attr("x2", function(d) { return d.x; })
       .attr("y1", y(0.9))
       .attr("y2", y(1.0));
 
@@ -115,6 +115,10 @@ var y = d3.scaleLinear()
 /*****************************************************************************/
 
 d3.json("data/multilevel-models.json", function(error, data) {
+
+  data.forEach(function(d) {
+    d.data = d.data.map(function(e, i) { return {x: x(d.data[i]), y: y(0.5)}; } );
+  });
 
   // Plot 1
   var plot1 = createPlot("#plot1", data);
