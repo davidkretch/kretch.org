@@ -31,9 +31,9 @@ function createPlot(selector, data) {
       .data(data)
       .enter()
       .append("svg")
-      .attr("class", function(d, i) { return "state" + i; })
-      .attr("width", WIDTH)
-      .attr("height", HEIGHT);
+      .attr("class", function(d, i) { return "state" + i; });
+
+  setSize();
 
   // Data points
   var points = svg.append("g")
@@ -43,8 +43,8 @@ function createPlot(selector, data) {
       .data(function(d) { return d.data; })
       .enter()
       .append("circle")
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; })
+      .attr("cx", function(d) { return x(d.x); })
+      .attr("cy", function(d) { return y(d.y); })
       .attr("r", 5);
 
   // Rug
@@ -56,8 +56,8 @@ function createPlot(selector, data) {
       .enter()
       .append("line")
       .attr("class", "rug")
-      .attr("x1", function(d) { return d.x; })
-      .attr("x2", function(d) { return d.x; })
+      .attr("x1", function(d) { return x(d.x); })
+      .attr("x2", function(d) { return x(d.x); })
       .attr("y1", y(0.9))
       .attr("y2", y(1.0));
 
@@ -99,36 +99,16 @@ function createPlot(selector, data) {
   return(svg)
 }
 
-/*****************************************************************************/
-
-var WIDTH = 675;
-var HEIGHT = 100;
-
-var x = d3.scaleLinear()
-    .domain([0, 1])
-    .range([0, WIDTH]);
-
-var y = d3.scaleLinear()
-    .domain([0, 1])
-    .range([0, HEIGHT]);
-
-/*****************************************************************************/
-
-d3.json("data/multilevel-models.json", function(error, data) {
-
-  data.forEach(function(d) {
-    d.data = d.data.map(function(e, i) { return {x: x(d.data[i]), y: y(0.5)}; } );
-  });
-
-  // Plot 1
+function plot1(data) {
   var plot1 = createPlot("#plot1", data);
 
   plot1.selectAll(".data")
       .attr("class", "data data-colored")
       .selectAll("circle")
       .attr("r", 6);
+}
 
-  // Plot 2
+function plot2(data) {
   var plot2 = createPlot("#plot2", data);
 
   plot2.select(".est-mean")
@@ -145,8 +125,9 @@ d3.json("data/multilevel-models.json", function(error, data) {
      .attr("x", x(0.87))
      .attr("y", y(0.7))
      .text("est. mean");
+}
 
-  // Plot 3
+function plot3(data) {
   var plot3 = createPlot("#plot3", data);
 
   plot3.insert("g", ":first-child")
@@ -195,5 +176,38 @@ d3.json("data/multilevel-models.json", function(error, data) {
   }
 
   displayEstimates();
+}
+
+function setSize() {
+
+  var WIDTH = 670;
+  var HEIGHT = 100;
+
+  d3.selectAll("svg")
+      .attr("width", WIDTH)
+      .attr("height", HEIGHT);
+
+  x = d3.scaleLinear()
+      .domain([0, 1])
+      .range([0, WIDTH]);
+
+  y = d3.scaleLinear()
+      .domain([0, 1])
+      .range([0, HEIGHT]);
+}
+
+/*****************************************************************************/
+
+/*****************************************************************************/
+
+d3.json("data/multilevel-models.json", function(error, data) {
+
+  data.forEach(function(d) {
+    d.data = d.data.map(function(e, i) { return {x: d.data[i], y: 0.5}; } );
+  });
+
+  plot1(data);
+  plot2(data);
+  plot3(data);
 
 });
