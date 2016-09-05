@@ -62,14 +62,14 @@ function createPlot(selector, data) {
       .attr("y2", y(1.0));
 
   // True means
-  means = svg.append("g")
+  var means = svg.append("g")
       .attr("class", "mean")
 
   means.append("polygon")
       .attr("points", function(d) { return star(x(d.mean), y(0.5), 18, 9, 5); });
 
   // Estimated means
-  est_means = svg.append("g")
+  var est_means = svg.append("g")
       .attr("class", "est-mean");
 
   // Facet labels
@@ -82,7 +82,7 @@ function createPlot(selector, data) {
       .text(function(d) { return d.state; });
 
   // Legend
-  legend = svg
+  var legend = svg
       .filter(":last-child")
       .append("g")
       .attr("class", "legend")
@@ -115,7 +115,7 @@ function plot2(data) {
       .append("polygon")
       .attr("points", function(d) { return polygon(x(d.est_mean), y(0.5), 12, 3); });
 
-  legend2 = plot2.select(".legend");
+  var legend2 = plot2.select(".legend");
 
   legend2.append("polygon")
      .attr("points", function(d) { return polygon(x(0.85), y(0.67), 8, 3); })
@@ -138,7 +138,7 @@ function plot3(data) {
       .attr("y1", y(0))
       .attr("y2", y(1));
 
-  legend3 = plot3.select(".legend");
+  var legend3 = plot3.select(".legend");
 
   legend3.append("polygon")
       .attr("points", function(d) {return polygon(x(0.85), y(0.67), 8, 3); })
@@ -195,8 +195,6 @@ function setSize() {
       .domain([0, 1])
       .range([0, HEIGHT]);
 }
-
-/*****************************************************************************/
 
 /*****************************************************************************/
 
