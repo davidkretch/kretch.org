@@ -24,10 +24,14 @@ function star(x, y, r1, r2, edges) {
 
 function createPlot(selector, data) {
 
+  var graph = d3.select(selector)
+      .attr("class", "graph");
+
+  graph.selectAll("*")
+      .remove();
+
   // Plot areas
-  var svg = d3.select(selector)
-      .attr("class", "graph")
-      .selectAll("svg")
+  var svg = graph.selectAll("svg")
       .data(data)
       .enter()
       .append("svg")
@@ -82,6 +86,7 @@ function createPlot(selector, data) {
       .text(function(d) { return d.state; });
 
   // Legend
+  // TODO: Fix legend positioning on window resize
   var legend = svg
       .filter(":last-child")
       .append("g")
@@ -180,7 +185,7 @@ function plot3(data) {
 
 function setSize() {
 
-  var WIDTH = 670;
+  var WIDTH = d3.select("div .blog-post").node().getBoundingClientRect().width;
   var HEIGHT = 100;
 
   d3.selectAll("svg")
@@ -196,6 +201,15 @@ function setSize() {
       .range([0, HEIGHT]);
 }
 
+function draw(data) {
+
+  plot1(data);
+  plot2(data);
+  plot3(data);
+
+  d3.select(window).on('resize', function() { draw(data); });
+}
+
 /*****************************************************************************/
 
 d3.json("data/multilevel-models.json", function(error, data) {
@@ -204,8 +218,6 @@ d3.json("data/multilevel-models.json", function(error, data) {
     d.data = d.data.map(function(e, i) { return {x: d.data[i], y: 0.5}; } );
   });
 
-  plot1(data);
-  plot2(data);
-  plot3(data);
+  draw(data);
 
 });
