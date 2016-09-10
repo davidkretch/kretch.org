@@ -41,7 +41,7 @@ function createPlot(selector, data) {
 
   // Data points
   var points = svg.append("g")
-     .attr("class", "data")
+     .attr("class", "data");
 
   points.selectAll("circle")
       .data(function(d) { return d.data; })
@@ -53,7 +53,7 @@ function createPlot(selector, data) {
 
   // Rug
   var rug = svg.append("g")
-      .attr("class", "rug")
+      .attr("class", "rug");
 
   rug.selectAll("line")
       .data(function(d) { return d.data; })
@@ -67,7 +67,7 @@ function createPlot(selector, data) {
 
   // True means
   var means = svg.append("g")
-      .attr("class", "mean")
+      .attr("class", "mean");
 
   means.append("polygon")
       .attr("points", function(d) { return star(x(d.mean), y(0.5), 18, 9, 5); });
@@ -78,7 +78,7 @@ function createPlot(selector, data) {
 
   // Facet labels
   var labels = svg.append("g")
-      .attr("class", "label")
+      .attr("class", "label");
 
   labels.append("text")
       .attr("x", x(0.01))
@@ -86,22 +86,26 @@ function createPlot(selector, data) {
       .text(function(d) { return d.state; });
 
   // Legend
-  // TODO: Fix legend positioning on window resize
   var legend = svg
       .filter(":last-child")
       .append("g")
-      .attr("class", "legend")
+      .attr("class", "legend");
 
   legend.append("text")
-     .attr("x", x(0.87))
+     .attr("x", x(0) + 10)
      .attr("y", y(0.9))
      .text("true mean");
 
   legend.append("polygon")
-     .attr("points", function(d) { return star(x(0.85), y(0.85), 8, 4, 5); })
+     .attr("points", function(d) { return star(x(0), y(0.85), 8, 4, 5); })
      .attr("class", "mean");
 
-  return(svg)
+  var legend_width = legend.node().getBoundingClientRect().width;
+  var legend_pos = WIDTH - legend_width;
+
+  legend.attr("transform", "translate(" + legend_pos + ")");
+
+  return(svg);
 }
 
 function plot1(data) {
@@ -123,11 +127,11 @@ function plot2(data) {
   var legend2 = plot2.select(".legend");
 
   legend2.append("polygon")
-     .attr("points", function(d) { return polygon(x(0.85), y(0.67), 8, 3); })
+     .attr("points", function(d) { return polygon(x(0), y(0.67), 8, 3); })
      .attr("class", "est-mean");
 
   legend2.append("text")
-     .attr("x", x(0.87))
+     .attr("x", x(0) + 10)
      .attr("y", y(0.7))
      .text("est. mean");
 }
@@ -146,11 +150,11 @@ function plot3(data) {
   var legend3 = plot3.select(".legend");
 
   legend3.append("polygon")
-      .attr("points", function(d) {return polygon(x(0.85), y(0.67), 8, 3); })
+      .attr("points", function(d) {return polygon(x(0), y(0.67), 8, 3); })
       .attr("class", "est-mean");
 
   legend3.append("text")
-      .attr("x", x(0.87))
+      .attr("x", x(0) + 10)
       .attr("y", y(0.7))
       .text("est. mean");
       
@@ -185,8 +189,8 @@ function plot3(data) {
 
 function setSize() {
 
-  var WIDTH = d3.select("div .blog-post").node().getBoundingClientRect().width;
-  var HEIGHT = 100;
+  WIDTH = d3.select("div .blog-post").node().getBoundingClientRect().width;
+  HEIGHT = 100;
 
   d3.selectAll("svg")
       .attr("width", WIDTH)
