@@ -3,11 +3,11 @@ save_as: resume.html
 
 ## Skills
 
-**Data** data management, visualization, machine learning, statistical modeling
-
 **Languages** R, Python, SQL, JavaScript, C++
 
 **Tools** AWS (EC2, RDS, S3), PostgreSQL, MySQL, Git, D3.js
+
+**Data** data management, machine learning, statistical modeling
 
 ---
 
@@ -15,17 +15,18 @@ save_as: resume.html
 
 **Summit Consulting**  
 *2013 - present*  
-Team lead of data analysis projects, taking projects from planning through analysis to
-reporting and presenting results. Mentor junior staff, and help colleagues with
-programming and data management. Provide training on R, visualization, version
-control, and cloud computing. Founder of Data Science Club and Baking Club.
+Team lead of data analysis projects, taking projects from planning through 
+analysis to reporting and presenting results. Mentor junior staff, and help 
+colleagues with programming and data management. Provide training on R, 
+visualization, version control, and cloud computing. Founder of Data Science 
+Club and Baking Club.
 
 * Retrospective study to validate the effectiveness of $1B in energy-saving
 investments in public housing (e.g. solar panels), via multilevel modeling
 * Estimate the impacts of the OSHA Site-Specific Targeting workplace inspection
 program, via analysis of a randomized controlled trial
-* Identify likely non-compliant pension plans and patterns of non-compliance, via a
-variety of approaches: random forests, GLMs, etc.
+* Identify likely non-compliant pension plans and patterns of non-compliance, 
+via random forests, GLMs, etc.
 
 **Terra Technology**  
 *2012 - 2013*  

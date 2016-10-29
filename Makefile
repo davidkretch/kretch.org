@@ -113,8 +113,7 @@ ftp_upload: publish
 
 s3_upload: publish
 	aws s3 rm s3://$(S3_BUCKET) --recursive
-	aws s3 sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --delete --exclude '*.svg'
-	aws s3 sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --delete --exclude '*' --include '*.svg' --content-type 'image/svg+xml'
+	aws s3 sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --delete
 
 cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
